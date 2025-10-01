@@ -2,6 +2,9 @@ services:
   botai-zap:
     build: .
     volumes:
-      - ./src/logs:/app/src/logs
+      - whatsapp_data:/app/src/logs/whatsappAuth
     env_file:
       - .env
+
+volumes:
+  whatsapp_data:
