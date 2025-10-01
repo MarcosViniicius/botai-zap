@@ -7,8 +7,7 @@
     "build": "tsc",
     "dev": "ts-node src/index.ts",
     "start": "bun index.ts",
-    "test": "jest",
-    "install": "bun install"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",

@@ -54,6 +54,7 @@ cp .env.example .env
 APIKEY=sua-api-key-openai-aqui
 DEBUG_TOKENS=false
 MAX_HISTORY_LENGTH=20
+FILE_DATA_PATH='./src/logs/whatsappAuth' // Local personalizável.
 ```
 
 ## 🎯 Uso
