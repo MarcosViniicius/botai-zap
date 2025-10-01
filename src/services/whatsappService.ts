@@ -60,7 +60,7 @@ export function setupBot(client: Client): void {
 
   // Evento quando uma nova mensagem é recebida
   client.on('message', async (msg: Message) => {
-    const speed = 2.0; // Velocidade de aceleração do áudio
+    const speed = 1.75; // Velocidade de aceleração do áudio
     try {
       const userId = msg.author || msg.from;
       const timestamp = msg.timestamp;
