@@ -18,6 +18,7 @@ COPY . .
 # Cria usuário não-root para Chromium
 RUN addgroup -g 1001 -S bunuser && adduser -S bunuser -u 1001
 RUN chown -R bunuser:bunuser /app
+
 USER bunuser
 
 CMD ["bun", "start"]
