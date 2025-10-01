@@ -25,6 +25,7 @@ Este projeto implementa um assistente virtual no WhatsApp capaz de:
 - Bun (recomendado) ou npm
 - Conta OpenAI com API key
 - WhatsApp Web
+- ffmpeg-static (incluído automaticamente)
 
 ## 🚀 Instalação
 
@@ -112,7 +113,7 @@ src/
 │   ├── tokenDebugModel.ts    # Debug de tokens
 │   └── accelerateAudioModel.ts # Processamento de áudio
 ├── types/
-│   └── fluent-ffmpeg.d.ts    # Tipos TypeScript
+│   └── ffmpeg-static.d.ts    # Tipos TypeScript para ffmpeg-static
 └── tests/                    # Testes automatizados
 ```
 

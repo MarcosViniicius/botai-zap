@@ -74,7 +74,6 @@ export function setupBot(client: Client): void {
 
         // CASO QUEIRA SALVAR O ÁUDIO ACELERADO
         // fs.writeFileSync("audio_acelerado.ogg", audioBufferAcelerated);
-        console.log("Áudio acelerado salvo.");
         await processAudioMessage(msg, audioBufferAcelerated, userId);
         return;
       }

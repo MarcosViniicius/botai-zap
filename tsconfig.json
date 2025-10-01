@@ -7,6 +7,6 @@
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": ["./*.ts", "services/whatsappService.ts", "services/openaiService.ts", "src/models/historyModel.ts", "src/models/tokenDebugModel.ts", "src/models/accelerateAudioModel.ts", "src/types/fluent-ffmpeg.d.ts", "src/config/index.ts"],
+  "include": ["./*.ts", "services/whatsappService.ts", "services/openaiService.ts", "src/models/historyModel.ts", "src/models/tokenDebugModel.ts", "src/models/accelerateAudioModel.ts", "src/types/ffmpeg-static.d.ts", "src/config/index.ts"],
   "exclude": ["node_modules", "dist"]
 }
