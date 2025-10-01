@@ -1,29 +1,7 @@
-version: '3.8'
-
 services:
   botai-zap:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: botai-zap-app
-    restart: unless-stopped
+    build: .
     volumes:
-      # Persiste os dados de autenticação do WhatsApp
-      - ./src/logs/whatsappAuth:/app/src/logs/whatsappAuth
-      # Volume para logs gerais
       - ./src/logs:/app/src/logs
-    environment:
-      - NODE_ENV=production
     env_file:
       - .env
-    networks:
-      - botai-network
-    healthcheck:
-      test: ["CMD", "bun", "--version"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-
-networks:
-  botai-network:
-    driver: bridge
