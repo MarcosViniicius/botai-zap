@@ -6,7 +6,7 @@ Um bot inteligente para WhatsApp que utiliza a API da OpenAI para conversas natu
 
 Este projeto implementa um assistente virtual no WhatsApp capaz de:
 - Manter conversas contextuais usando GPT
-- Processar comandos específicos (/help, /stats, etc.)
+- Processar comandos específicos (/stats, etc.)
 - Transcrever mensagens de áudio
 - Gerar respostas em áudio
 - Acelerar áudio para melhor processamento
@@ -70,26 +70,8 @@ npm start
 
 ## 📝 Comandos Disponíveis
 
-- `/help` - Mostra todos os comandos disponíveis
 - `/stats` - Exibe estatísticas do bot
-- `/clear` - Limpa o histórico de conversa
-- `/tokens` - Mostra estatísticas de tokens
-- `/reset_tokens` - Reseta contador de tokens
-- `/ping` - Testa se o bot está respondendo
-- `/weather [cidade]` - Consulta clima
-- `/translate [língua] [texto]` - Tradução
-- `/summarize [texto]` - Resumo de texto
-- `/joke` - Conta uma piada
-- `/quote` - Gera frase motivacional
-- `/math [expressão]` - Calculadora
-- `/define [termo]` - Definição
-- `/news [tópico]` - Notícias
-- `/recipe [ingredientes]` - Receitas
-- `/workout [tipo]` - Sugestões de treino
-- `/reminder [lembrete]` - Criar lembrete
-- `/facts [tópico]` - Fatos interessantes
-- `/code [descrição]` - Ajuda com programação
-- `/study [tópico]` - Ajuda com estudos
+
 
 ## 🧪 Desenvolvimento
 
