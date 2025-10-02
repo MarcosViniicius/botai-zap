@@ -18,11 +18,13 @@ Este projeto implementa um assistente virtual no WhatsApp capaz de:
 - **Processamento de Áudio**: Transcrição e resposta em áudio
 - **Histórico de Conversa**: Mantém contexto entre mensagens
 - **Debug de Tokens**: Monitoramento de uso da API OpenAI
+- **Runtime em Background**: Execução contínua com PM2
 
 ## 🔧 Pré-requisitos
 
 - Node.js (versão 16 ou superior)
 - Bun (recomendado) ou npm
+- PM2 (para execução em background)
 - Conta OpenAI com API key
 - WhatsApp Web
 - ffmpeg-static (incluído automaticamente)
@@ -32,7 +34,7 @@ Este projeto implementa um assistente virtual no WhatsApp capaz de:
 1. Clone o repositório:
 ```bash
 git clone <url-do-repositorio>
-cd type
+cd botai-zap
 ```
 
 2. Instale as dependências:
@@ -40,6 +42,13 @@ cd type
 bun install
 # ou
 npm install
+```
+
+3. Instale o PM2 globalmente:
+```bash
+bun add -g pm2
+# ou
+npm install -g pm2
 ```
 
 ## ⚙️ Configuração
@@ -59,21 +68,46 @@ FILE_DATA_PATH='./src/logs/whatsappAuth' // Local personalizável.
 
 ## 🎯 Uso
 
-1. Execute o bot:
+### Execução Simples (Desenvolvimento)
+
 ```bash
 bun start
 # ou
 npm start
 ```
 
-2. No primeiro acesso, um QR code será exibido no terminal
-3. Escaneie o QR code com o WhatsApp Web
-4. O bot estará pronto para uso!
+### Execução em Background com PM2 (Produção)
+
+1. **Iniciar o bot em background:**
+```bash
+bun run startpm2
+```
+
+2. **Para visualizar os logs e escanear o QR code:**
+```bash
+bun run logspm2
+```
+
+3. **Outros comandos PM2 disponíveis:**
+```bash
+# Parar o bot
+bun run stoppm2
+
+# Reiniciar o bot
+bun run restartpm2
+
+# Verificar status
+bun run statuspm2
+
+# Ver logs
+bun run logspm2
+```
+
+> **⚠️ Importante**: Ao executar com PM2, você precisará usar o comando `bun run logspm2` para visualizar o QR code na primeira configuração.
 
 ## 📝 Comandos Disponíveis
 
 - `/stats` - Exibe estatísticas do bot
-
 
 ## 🧪 Desenvolvimento
 
@@ -118,6 +152,12 @@ src/
 └── tests/                    # Testes automatizados
 ```
 
+## 🚀 Melhorias de Performance
+
+- **Removido Docker**: A configuração Docker foi removida pois estava impactando negativamente na performance da aplicação
+- **QR Code Otimizado**: Substituído o módulo QRCode pelo `qrcode-terminal`, específico para terminais e mais eficiente
+- **PM2 Integration**: Runtime em background com PM2 para melhor estabilidade e gerenciamento de processos
+
 ## 🔒 Licença
 
 Este projeto está sob a licença ISC.
@@ -131,3 +171,4 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull re
 - Este projeto utiliza a API da OpenAI, que tem custos associados
 - Mantenha suas chaves de API seguras
 - Use responsavelmente e respeite os termos de serviço
+- Para execução em produção, recomenda-se o uso do PM2

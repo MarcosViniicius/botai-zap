@@ -6,7 +6,7 @@ import {
   generateSpeechToTextGpt,
 } from './openaiService';
 import {getHistoryStats} from '../models/historyModel';
-import QRCode from 'qrcode';
+import qrcodeTerminal from 'qrcode-terminal';
 import { accelerateAudioBuffer } from '../models/accelerateAudioModel';
 import fs from "fs";
 
@@ -38,19 +38,15 @@ async function processAudioMessage(msg: Message, audioBuffer: Buffer, userId: st
 // Configura todas as funcionalidades do bot
 export function setupBot(client: Client): void {
     // Evento QR Code
-  client.on('qr', (qr: string | undefined) => {
+   client.on('qr', (qr: string | undefined) => {
     if (!qr) {
       console.log("No QR code received");
       return;
     }
-    
-    QRCode.toString(qr, { type: 'terminal', small: true }, function (err, url) {
-      if (err) {
-        console.error('Erro ao gerar QR code:', err);
-        return;
-      }
-      console.log(url);
-    });
+
+    console.log("Escaneie este QR code com seu WhatsApp:");
+
+    qrcodeTerminal.generate(qr, { small: true}); // gera e imprime no terminal
   });
 
   // Evento quando o cliente está pronto
